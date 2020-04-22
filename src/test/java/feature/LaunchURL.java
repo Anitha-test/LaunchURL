@@ -1,5 +1,6 @@
 package feature;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ public class LaunchURL {
 	public static WebDriver driver;
 	@Given("^Launch the Given URL$")
 	public void launch_the_Given_URL() throws Throwable {
-		System.setProperty("webdriver.chrome.driver", "D:\\MySource\\HealthicityProviderAnalytics\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator +"\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--incognito");
 		options.addArguments("--disable-extensions");
